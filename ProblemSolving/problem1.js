@@ -136,7 +136,7 @@ class Solution{
                 }
             }
         }
-        
+
         if(num==B-A+1){
             return true;
         }else{
