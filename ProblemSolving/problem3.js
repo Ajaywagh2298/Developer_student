@@ -46,7 +46,7 @@ function isPalindrome(x) {
 
     return rev === x || Math.trunc(rev/10) === x;
 };
-
+console.log(' isPalindrome '  )
 const num = 121;
 if(isPalindrome(num)=== true){
     console.log(`Given ${num} are Palindrome`)
@@ -133,7 +133,7 @@ var romanToInt = function(s) {
 
 };
 
-console.log(romanToInt('IV'));
+console.log(' romanToInt ' + romanToInt('IV'));
 //-------------------------------------------------- END ---------------------------------------------------------------
 
 /**
@@ -187,6 +187,9 @@ var longestCommonPrefix = function(strs) {
     if(prefix == 0) console.log(`" "`)
     else return console.log(prefix);
 };
+console.log(' firstOccurrence ' )
 longestCommonPrefix(['ajay','aj6au','ajaa']);
+console.log(' firstOccurrence ' )
 longestCommonPrefix(['-ajay','=aj6au','pa6jaa']);
 //----------------------------------------- END ------------------------------------------------------------------------
+
