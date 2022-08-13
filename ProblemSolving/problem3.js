@@ -193,3 +193,114 @@ console.log(' firstOccurrence ' )
 longestCommonPrefix(['-ajay','=aj6au','pa6jaa']);
 //----------------------------------------- END ------------------------------------------------------------------------
 
+/**
+ * Josephus problem
+ Given the total number of persons n and a number k which indicates that k-1 persons are skipped and kth person is killed in circle in a fixed direction.
+
+ The task is to choose the safe place in the circle so that when you perform these operations starting from 1st place in the circle, you are the last one remaining and survive.
+
+ Example 1:
+
+ Input:
+ n = 3 k = 2
+ Output: 3
+ Explanation: There are 3 persons so
+ skipping 1 person i.e 1st person 2nd
+ person will be killed. Thus the safe
+ position is 3.
+
+ Example 2:
+
+ Input:
+ n = 5 k = 3
+ Output: 4
+ Explanation: There are 5 persons so
+ skipping 2 person i.e 3rd person will
+ be killed. Thus the safe position is 4.
+
+
+ Your Task:
+ You don't need to read input or print anything. You are required to complete the function josephus () that takes two parameters n and k and returns an integer denoting safe position.
+
+ Expected Time Complexity: O(N).
+ Expected Auxiliary Space: O(N).
+
+ Constraints:
+ 1 <= k, n <= 20
+ * */
+
+/**
+ * @param {number} n
+ * @param {number} k
+ * @returns {number}
+ */
+
+ function josephus(n, k) {
+        let result = 0;
+        for(let i=1;i<=n;i++)
+            result = (result + k)%i;
+        return result + 1;
+}
+
+console.log(' josephus: '+ josephus(7,4))
+
+/**
+ * Remove Duplicates from Sorted Array
+ * Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+ Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+ Return k after placing the final result in the first k slots of nums.
+
+ Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+ Custom Judge:
+
+ The judge will test your solution with the following code:
+
+ int[] nums = [...]; // Input array
+ int[] expectedNums = [...]; // The expected answer with correct length
+
+ int k = removeDuplicates(nums); // Calls your implementation
+
+ assert k == expectedNums.length;
+ for (int i = 0; i < k; i++) {
+    assert nums[i] == expectedNums[i];
+}
+ If all assertions pass, then your solution will be accepted.
+
+
+
+ Example 1:
+
+ Input: nums = [1,1,2]
+ Output: 2, nums = [1,2,_]
+ Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+ It does not matter what you leave beyond the returned k (hence they are underscores).
+ Example 2:
+
+ Input: nums = [0,0,1,1,1,2,2,3,3,4]
+ Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+ Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+ It does not matter what you leave beyond the returned k (hence they are underscores).
+ * */
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    const len = nums.length;
+    let n = 0;
+    if(len==0 || len ==1) return len;
+
+    for(let i = 0 ;i < len -1 ; i++){
+        if(nums[i]!==nums[i+1]){
+            console.log(` loop Data :${nums[n++] = nums[i]}`);
+        }
+    }
+    console.log(`Ans match : ${nums[n++] = nums[len -1]}`)
+    return n;
+};
+
+console.log(' Solution : ' + removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
