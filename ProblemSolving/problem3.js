@@ -304,3 +304,56 @@ var removeDuplicates = function(nums) {
 };
 
 console.log(' Solution : ' + removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+
+/**
+ * Jerome and his friend Martin have developed a special app for sending messages. The app has a special feature of encryption. So, whenever Jerome wants to send the message to Martin an encrypted message, they must need the public and private keys. To get the public and private key they have decided to choose three integers P, R, and a secret code X, and use the following rules to generate both the keys
+
+ The rules are:
+
+ The public key will be the smallest integer N for which PS NSR and the sum of its digits is X.
+
+ The private key will be the largest integer M for which PSMSR and the sum of its digits is X. Jerome and Martin will be able to send and receive the encrypted messages successfully only if correctly determines numbers i.e., public key N and private key M remembering that the N and M will always exist. Can you help Jerome and his friend Martin with a program to generate the public and private keys by accepting P, R, and X. Read the input from STDIN and print the output to STDOUT. Do not write arbitrary strings while reading the input or while printing, as these contribute to the standard output.
+
+ Constraints:
+
+ 1.P(1≤P≤10000) ii. R (1 ≤ R≤ 10 000, P ≤R) iii. X (1 ≤ X ≤36)
+
+ Input Format:
+
+ The first line of input contains the integer P. The second line of input contains the integer R. The third line of input contains the integer X, the secret code of the app.
+
+ Output Format:
+
+ The first line of output must contain the integer public key, N. The second line of output must contain the integer private key, M.
+
+ Sample Input 1:
+
+ 1
+
+ 55
+
+ 5
+
+ Sample Output 1:
+ 5
+ 50
+
+ explaination : if list last with 1 t0 55
+                 the public key start with 5 like Pub = { 5, 14, 23, 32, 41}
+ * */
+
+function keyCounter(start , end, pub){
+    let arr ={};
+    let count = 0;
+    for(let i = start; i <= end; i++){
+        if(i<=pub){
+            arr[i+9];
+            count++;
+        }
+    }
+    console.log("public key   :  " + count)
+    console.log(`private key  :  ${end-count}`)
+}
+
+keyCounter(1,55,5)
+keyCounter(9,99,18)
